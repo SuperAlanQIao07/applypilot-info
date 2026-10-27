@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Personal desktop job application management and read-only Gmail tracking, operated by Yinqi Qiao."><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'"><title>ApplyPilot — Personal Job Application Assistant</title><link rel="stylesheet" href="style.css"></head><body><header><a href="./">ApplyPilot</a><nav aria-label="Main navigation"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="mailto:alan.qiao07@gmail.com">Contact</a></nav></header><main><h1>ApplyPilot — Personal Job Application Assistant</h1>
+<p>ApplyPilot is a personal-use desktop application operated by Yinqi Qiao. This installation is based on the open-source ApplyPilot project and is independently operated; it is not an official service of Google or the upstream project maintainers.</p>
+<p>ApplyPilot helps its operator discover job opportunities, prepare factual resumes, manage authorized applications, and track recruiting responses in a private local dashboard.</p>
+<h2>Gmail integration</h2>
+<p>With the account holder's authorization, ApplyPilot uses the Gmail API to:</p>
+<ul>
+<li>Find recent job-related messages and match them to recorded applications.</li>
+<li>Read relevant message content to identify application receipts, rejections, interview invitations, follow-up requests, and offers.</li>
+<li>Retrieve legitimate verification codes for the current authorized application and enter them into the same application browser session.</li>
+</ul>
+<p>The integration requests only <code>https://www.googleapis.com/auth/gmail.readonly</code>. This permission permits reading Gmail data; it does not permit sending, deleting, modifying, or labeling messages. The application does not request or store the account's Gmail password.</p>
+<p>Routine email tracking and verification use deterministic Python rules. Messages without sufficient matching evidence remain unresolved for review.</p>
+<p>This installation is intended for the operator's personal use. Application records, resumes, email content, and the private dashboard are not published on this website.</p>
+<h2>Privacy and contact</h2>
+<p>Read the <a href="privacy.html">Privacy Policy</a> for information about access, use, storage, retention, sharing, and revoking access.</p>
+<p>Operator and support: Yinqi Qiao — <a href="mailto:alan.qiao07@gmail.com">alan.qiao07@gmail.com</a></p>
+</main><footer>Personal-use installation · Operated by Yinqi Qiao · Updated October 27, 2026</footer></body></html>
