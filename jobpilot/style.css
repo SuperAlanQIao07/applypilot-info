@@ -55,6 +55,7 @@ h1 { font-size: clamp(44px, 5.7vw, 70px); white-space: pre-line; font-weight: 65
 .chip-icon.intel { font-family: ui-serif, Georgia, serif; font-style: italic; }
 .package-type { font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); }
 .download-card h3 { font-size: 23px; }
+.chip-years { font-size: 13px; line-height: 1.65; color: var(--muted); margin-top: 10px; min-height: 43px; }
 .asset-size { color: var(--muted); font-size: 13px; margin-top: 8px; min-height: 23px; }
 .download-action { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; margin-top: 20px; padding: 14px 20px; border-radius: 6px; background: var(--accent); color: var(--accent-text); font-size: 16px; font-weight: 600; line-height: 1.5; transition: filter .15s; }
 .download-action:hover { text-decoration: none; filter: brightness(.94); }

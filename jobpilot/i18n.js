@@ -16,7 +16,7 @@ window.JOBPILOT_COPY = {
     "intel_title": "Intel 芯片",
     "fallback": "在下载页选择对应文件",
     "chip_help_title": "不确定选哪一个？",
-    "chip_help": "打开「 → 关于本机」：写着「芯片 Apple M…」选第一个；写着「处理器 Intel…」选第二个。浏览器无法可靠判断芯片，请以这里的信息为准。",
+    "chip_help": "打开「 → 关于本机」：写着「芯片 Apple M…」选第一个；写着「处理器 Intel…」选第二个。年份指机型发布年份，不是购买年份；2020 年款两种芯片都有，且不是上述年份的所有机型都满足系统要求，请以芯片和系统版本为准。",
     "preview_eyebrow": "先看看，再开始",
     "preview_title": "从资料准备，到申请记录。",
     "preview_note": "打包版实拍 · 示例资料",
@@ -76,7 +76,9 @@ window.JOBPILOT_COPY = {
     "caption_overview": "在概览查看职位、准备进度和申请后续。",
     "caption_profile": "导入简历辅助填写，再逐项核对并确认资料。",
     "caption_apply": "先检查准备项与设置，再试运行核对填写内容。",
-    "caption_updates": "在软件更新页检查新版，下载并校验后安装。"
+    "caption_updates": "在软件更新页检查新版，下载并校验后安装。",
+    "apple_years": "2020 年末起推出的 M 系列 Mac。",
+    "intel_years": "常见于 2017–2020 年款 Intel Mac，须能运行 macOS 13.5 或更新。"
   },
   "en": {
     "skip": "Skip to downloads",
@@ -95,7 +97,7 @@ window.JOBPILOT_COPY = {
     "all_releases": "View GitHub downloads ↗",
     "fallback": "Choose the matching file on the download page",
     "chip_help_title": "Which one is for your Mac?",
-    "chip_help": "Open  → About This Mac. “Chip Apple M…” means the first download; “Processor Intel…” means the second. Browsers cannot reliably identify your chip, so check here first.",
+    "chip_help": "Open  → About This Mac. “Chip Apple M…” means the first download; “Processor Intel…” means the second. Years refer to model introduction, not purchase. Both chips appeared in 2020 models, and not every model in these years meets the OS requirement. Check your chip and macOS version.",
     "preview_eyebrow": "A look inside",
     "preview_title": "From your profile to your application history.",
     "preview_note": "Packaged app · Example profile",
@@ -155,6 +157,8 @@ window.JOBPILOT_COPY = {
     "caption_overview": "See jobs, preparation progress and application follow-ups in Overview.",
     "caption_profile": "Import a resume to help fill fields, then review and confirm your information.",
     "caption_apply": "Review readiness and settings, then check the form with a dry run.",
-    "caption_updates": "Check for a newer release, then download, verify and install it in the app."
+    "caption_updates": "Check for a newer release, then download, verify and install it in the app.",
+    "apple_years": "M-series Macs introduced from late 2020 onward.",
+    "intel_years": "Typically 2017–2020 Intel models that can run macOS 13.5 or later."
   }
 };
