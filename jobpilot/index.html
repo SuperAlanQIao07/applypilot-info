@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="JobPilot for Mac：发现岗位、辅助填写求职申请表、读取邮箱验证码。下载 Apple 芯片或 Intel 版本。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://api.github.com; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>JobPilot — Mac 求职申请助手</title>
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./config.js" defer></script>
+  <script src="./i18n.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#download" data-i18n="skip">跳到下载</a>
+  <header class="site-header wrap">
+    <a class="brand" href="#download" aria-label="JobPilot"><img src="./icon.svg" width="40" height="40" alt=""><span>JobPilot</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#preview" data-i18n="nav_preview">看看软件</a>
+      <a href="#install" data-i18n="nav_install">安装指南</a>
+      <div class="languages" role="group" aria-label="中文 / English">
+        <button type="button" data-language="zh" lang="zh" aria-pressed="true">中文</button>
+        <button type="button" data-language="en" lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero wrap" id="download" aria-labelledby="hero-title">
+      <div class="hero-top">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="eyebrow">为 Mac 设计的求职申请助手</span></p>
+          <h1 id="hero-title" data-i18n="hero_title">求职申请，<br>少一些重复填写。</h1>
+          <p class="hero-description" data-i18n="hero_description">发现岗位、填写申请表、自动读取邮箱验证码。先试运行，核对后再正式投递。</p>
+        </div>
+        <aside class="hero-aside">
+          <span class="outline-mark" aria-hidden="true">↘</span>
+          <p data-i18n="hero_aside">从一次试运行开始。<br>让每一份申请，由你确认。</p>
+        </aside>
+      </div>
+      <div class="download-heading">
+        <h2 data-i18n="download_title">下载 JobPilot</h2>
+        <p data-i18n="requirements">macOS 13.5 或更新 · 不支持 Windows、手机</p>
+      </div>
+      <div class="download-grid">
+        <article class="download-card" id="card-apple">
+          <div class="chip-line"><span class="chip-icon" aria-hidden="true">M</span><span class="package-type">macOS / Apple Silicon</span></div>
+          <h3 data-i18n="apple_title">Apple 芯片（M 系列）</h3>
+          <p class="asset-size" id="size-apple" data-i18n="package_on_releases">安装包见下载页</p>
+          <a class="download-action" id="download-apple" href="https://github.com/SuperAlanQIao07/applypilot-info/releases/latest"><span data-i18n="download_action">下载 Mac 版</span><span aria-hidden="true">↓</span></a>
+          <a class="missing-link" id="missing-apple" href="https://github.com/SuperAlanQIao07/applypilot-info/releases/latest" hidden data-i18n="all_releases">查看 GitHub 下载页 ↗</a>
+        </article>
+        <article class="download-card" id="card-intel">
+          <div class="chip-line"><span class="chip-icon intel" aria-hidden="true">i</span><span class="package-type">macOS / Intel</span></div>
+          <h3 data-i18n="intel_title">Intel 芯片</h3>
+          <p class="asset-size" id="size-intel" data-i18n="package_on_releases">安装包见下载页</p>
+          <a class="download-action" id="download-intel" href="https://github.com/SuperAlanQIao07/applypilot-info/releases/latest"><span data-i18n="download_action">下载 Mac 版</span><span aria-hidden="true">↓</span></a>
+          <a class="missing-link" id="missing-intel" href="https://github.com/SuperAlanQIao07/applypilot-info/releases/latest" hidden data-i18n="all_releases">查看 GitHub 下载页 ↗</a>
+        </article>
+      </div>
+      <div class="release-line" aria-live="polite"><span id="release-meta"></span><span id="release-message" data-i18n="fallback">在下载页选择对应文件</span></div>
+      <div class="chip-help">
+        <strong data-i18n="chip_help_title">不确定选哪一个？</strong>
+        <p data-i18n="chip_help">打开「 → 关于本机」：写着「芯片 Apple M…」选第一个；写着「处理器 Intel…」选第二个。浏览器无法可靠判断芯片，请以这里的信息为准。</p>
+      </div>
+      <noscript><p>在下载页选择对应文件。Choose the matching file on the GitHub download page. JavaScript is only needed to show the latest version and direct links.</p></noscript>
+    </section>
+
+    <section class="preview-section" id="preview" aria-labelledby="preview-title">
+      <div class="wrap">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="preview_eyebrow">先看看，再开始</p><h2 id="preview-title" data-i18n="preview_title">从资料准备，到申请记录。</h2></div><span class="section-note" data-i18n="preview_note">打包版实拍 · 示例资料</span></div>
+        <div class="preview-tabs" role="group" aria-label="App screenshots">
+          <button type="button" data-shot="overview" aria-pressed="true" data-i18n="shot_overview">概览</button>
+          <button type="button" data-shot="profile" aria-pressed="false" data-i18n="shot_profile">我的资料</button>
+          <button type="button" data-shot="apply" aria-pressed="false" data-i18n="shot_apply">投递</button>
+          <button type="button" data-shot="updates" aria-pressed="false" data-i18n="shot_updates">软件更新</button>
+        </div>
+        <figure class="app-preview"><img id="app-screenshot" src="./screenshots/zh-overview.webp" width="1180" height="800" loading="lazy" alt="JobPilot 概览页，显示职位统计和申请记录"><figcaption id="shot-caption">在概览查看职位、准备进度和申请后续。</figcaption></figure>
+        <div class="feature-grid">
+          <article><span class="feature-number">01</span><h3 data-i18n="feature_discover_title">找到范围内的岗位</h3><p data-i18n="feature_discover">按地区与职位方向发现已配置雇主的公开岗位。支持 Greenhouse、Ashby、Workday；Lever 当前不支持，并非覆盖所有公司和表单。</p></article>
+          <article><span class="feature-number">02</span><h3 data-i18n="feature_profile_title">资料只需认真准备</h3><p data-i18n="feature_profile">导入简历 PDF，辅助填写空白资料，逐项核对后用于申请。遇到未知必填题，可保存回答供后续运行复用。</p></article>
+          <article><span class="feature-number">03</span><h3 data-i18n="feature_local_title">记录留在你的 Mac</h3><p data-i18n="feature_local">资料和投递记录主要保存在本机，密码存于 Mac 钥匙串。中英文界面随时切换，连接邮箱后可读取验证码和回信。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="install-section wrap" id="install" aria-labelledby="install-title">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="install_eyebrow">第一次使用</p><h2 id="install-title" data-i18n="install_title">安装，按这三步来。</h2></div><p class="section-note" data-i18n="install_note">无需 Python，也无需终端命令。</p></div>
+      <ol class="install-steps">
+        <li><span class="step-number" aria-hidden="true">1</span><div><h3 data-i18n="install_unpack_title">解压，拖入「应用程序」</h3><p data-i18n="install_unpack">下载与你的芯片对应的压缩包，双击解压，再把 JobPilot.app 拖到「应用程序」。请从「应用程序」打开。</p></div></li>
+        <li><span class="step-number" aria-hidden="true">2</span><div><h3 data-i18n="install_open_title">在系统设置中允许首次打开</h3><p data-i18n="install_open">应用没有 Apple Developer ID 签名和公证，首次打开会被 macOS 拦下。双击一次 → 点「完成」→「系统设置 → 隐私与安全性」→ 在底部点「仍要打开」，按提示确认。</p><p class="installation-warning" data-i18n="install_warning">macOS 15 起，不能再靠右键打开绕过。仅允许你信任的安装包；如提示损坏或会危害电脑，请停止安装并联系卖家核对。</p></div></li>
+        <li><span class="step-number" aria-hidden="true">3</span><div><h3 data-i18n="install_try_title">准备资料，先试运行</h3><p data-i18n="install_try">导入简历并逐项确认，绑定邮箱，选择地区与职位方向。先用「试运行（不提交）」检查填写内容，再决定是否正式投递。试运行会访问真实网站，也可能上传简历或注册账号，仅阻止最终提交。</p></div></li>
+      </ol>
+      <aside class="update-note"><span aria-hidden="true">↻</span><p data-i18n="update_note">已经安装 0.3.2 或更新版本？不用重新下载，在应用「软件更新」页点击「安装并重启」即可。</p></aside>
+    </section>
+
+    <section class="membership-section wrap" id="membership" aria-labelledby="membership-title">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="membership_eyebrow">先试用，再决定</p><h2 id="membership-title" data-i18n="membership_title">从免费试运行开始。</h2></div></div>
+      <div class="membership-grid">
+        <article><span class="plan-label" data-i18n="trial_label">免费试用</span><h3 data-i18n="trial_title">试运行不限次数</h3><p data-i18n="trial_body">正式投递共 5 份，不是每天 5 份。额度用完后仍可试运行，先确认设备和目标岗位是否适合。</p></article>
+        <article><span class="plan-label" data-i18n="member_label">会员</span><h3 data-i18n="member_title">正式投递不限总量</h3><p data-i18n="member_body">会员有效期内每轮最多处理 10 份。额度不代表成功率，也不代表一定有匹配岗位。</p><p class="price" id="membership-price" hidden></p></article>
+      </div>
+      <div class="contact-panel" id="contact-panel" hidden>
+        <h3 data-i18n="contact_title">购买与联系</h3>
+        <a id="store-link" class="text-link" hidden data-i18n="store_link">查看购买方式 ↗</a>
+        <p id="wechat-row" hidden><span data-i18n="wechat">微信：</span><span id="wechat-value"></span></p>
+        <p id="email-row" hidden><span data-i18n="email">邮箱：</span><span id="email-value"></span></p>
+      </div>
+    </section>
+
+    <section class="privacy-section wrap" aria-labelledby="privacy-title">
+      <div class="privacy-heading"><p class="eyebrow" data-i18n="privacy_eyebrow">使用前，请了解</p><h2 id="privacy-title" data-i18n="privacy_title">辅助申请，决定权在你。</h2></div>
+      <div class="privacy-copy">
+        <p data-i18n="privacy_captcha">CAPTCHA / 人机验证由你本人完成，软件不破解或代点；邮箱验证码和验证链接可自动读取，两者不同。</p>
+        <p data-i18n="privacy_data">申请会把资料和简历发送给招聘网站；试运行也可能上传简历、创建账号。本机保存资料不等于完全离线，会员、更新和提建议等功能需要联网。</p>
+        <p data-i18n="privacy_risk">部分网站的条款可能禁止自动化，可能拒绝申请或限制账号。请先阅读网站条款，自行决定是否使用并承担风险。软件不承诺面试、录用或每次提交成功。</p>
+        <p class="muted" data-i18n="privacy_affiliation">JobPilot 是独立软件，与 Workday、Greenhouse、Ashby 等公司没有关联。</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer wrap"><a class="brand" href="#download"><img src="./icon.svg" width="28" height="28" alt=""><span>JobPilot</span></a><span id="footer-version" data-i18n="footer_version_unknown">版本信息见下载页</span><a href="https://github.com/SuperAlanQIao07/applypilot-info/releases/latest" data-i18n="footer_releases">GitHub 下载页 ↗</a></footer>
+</body>
+</html>
