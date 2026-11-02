@@ -1,35 +1,29 @@
-# JobPilot download website
+# JobPilot website
 
-Buildless static HTML, CSS and JavaScript. Serve the contents of this directory as the website root. All local assets use relative paths, including under a repository subpath. No registration, upload or deployment is part of this change.
+Buildless, bilingual static HTML/CSS/JavaScript for the existing GitHub Pages website. Serve this directory as the root or under its repository subpath. There is no application source, analytics, account registration or form submission on this website.
 
-## Preview
+## Content and design
 
-From this directory, run `python3 -m http.server 8791`, then open the printed local URL. No npm packages or build command are needed.
+The warm-white and forest-green palette follows `src/jobpilot/app/web/workspace.css`. The existing app icon remains the favicon; the wordmark uses the same outline paper plane as the app workspace. The page explains preparation, batch applications, member-owned targeted applications, email follow-up, interview preparation, private PDF digests and career planning. Free and VIP features are separated; no price or contact information is invented.
 
-The only remote request is a public, unauthenticated GET to the GitHub latest-release API. The page requests it once per visit, times out after eight seconds, and retains usable GitHub download-page links on any failure. Language changes do not issue another request. Asset URLs must be HTTPS links in this repository's GitHub release-download path. Missing architectures are visibly disabled with a separate releases-page link; an API failure keeps both links usable. No browser chip recommendation is made.
+Features are verified against the app modules, buyer guides and the workspace/targeted/follow-up/report/plan implementation. A matching score is not an interview probability. The optional polishing workflow uses the buyer's own external AI account; routine rules and local reporting need no AI API. Dry runs block final submission but can visit real sites and involve attachments/account actions.
 
-## Optional public configuration
+## Preview and interactions
 
-Edit `config.js`: `price_zh`, `price_en`, `store_url`, `wechat`, `email`. Every field starts empty and its corresponding element is hidden. A price only appears for the selected language. Contact details are plain text; the optional store link accepts only HTTPS GitHub links, consistent with the site's external-link policy. Never put secrets in a public website configuration.
+Run `python3 -m http.server 8793 --bind localhost --directory site` from the checkout root. The gallery has keyboard-operable tabs, a modal with Escape/focus return and a link to the original image. The mobile menu closes after navigation. FAQs and installation help use native disclosures. Primary download links, installation instructions, FAQs and the overview screenshot remain usable without JavaScript.
 
-## Content sources
+The only external request is one unauthenticated GET to the GitHub latest-release API per page load. It times out after eight seconds. Direct package URLs must belong to the configured public release repository; errors keep both architecture choices linked to the release page. A missing build is disabled with a separate working release-page link. The page does not guess the visitor's chip. Language changes, gallery navigation and other local controls make no additional API calls.
 
-Copy is condensed from the repository's buyer documents:
+## Configuration and sharing
 
-- `docs/buyer/zh/使用说明.md`
-- `docs/buyer/zh/常见问题.md`
-- `docs/buyer/en/guide.md`
-- `docs/buyer/en/faq.md`
-- `docs/buyer/listing/闲鱼商品描述.md`
-
-The in-app update minimum follows the website task brief. The favicon is the SVG from `scripts/build_dev_app.sh`. Colors match the app's light and dark palette in `src/jobpilot/app/web/app.css`.
+`config.js` accepts optional public `price_zh`, `price_en`, `store_url`, `wechat` and `email`. Empty values stay hidden. Store URLs must use HTTPS GitHub URLs; public configuration must never contain credentials or activation codes. Canonical and Open Graph metadata point to the existing public website and its example app screenshot.
 
 ## Screenshot provenance
 
-The eight WebP files in `screenshots/` show the real packaged application from `release/JobPilot.app`, launched in browser mode with a fresh temporary `JOBPILOT_DATA_DIR` and `BROWSER=/usr/bin/true`. They are not UI illustrations. Overview, My profile, Apply and Software updates were captured through Playwright at 1180 × 800 in both languages, then compressed to WebP, below 300 KB each.
+Sixteen WebP images show the actual current application HTML/CSS/JS in Chinese and English, across eight pages. A separate local preview server (`scripts/site_demo.py`) creates a new temporary directory and seeds fictional Taylor Example information, fictional employers and clearly disclosed example records. Membership is stubbed only in that isolated preview. Machine identity, credential access and service status are stubbed; real application, mail and update workers never start. Every POST request is denied. Navigation and capture use browser controls; images are compressed without changing their content.
 
-No application was run, downloaded or installed through the UI. Profile inputs contain only fictional Taylor Example details entered without saving. No password, activation code or machine ID is pictured. The default user data directory was not used. Empty statistics reflect the isolated first-use state, not claimed application outcomes.
+The capture viewport is 1440 × 960. Each image is below 300 KB. `screenshots/provenance.json` records the source revision, viewport, fixture boundaries and exact published image hashes. Screenshot statistics and messages are examples, not claimed customer results. No real personal profile, mailbox, resume, activation code, machine ID or employer account is pictured.
 
-## Checks
+## Validation
 
-From the repository root, run `.venv/bin/python -m pytest -q tests/test_site.py`. Browser tests are opt-in: `JOBPILOT_SITE_BROWSER_TESTS=1 .venv/bin/python -m pytest -q tests/test_site.py` (requires the existing Playwright Python dependency and its Chromium browser). They serve an isolated local preview and cover repository subpaths, downloads, fallback, missing assets, language persistence, unavailable storage, configuration and narrow-screen overflow. They never download release assets. Review screenshots belong in `/tmp`, not this directory.
+Run `.venv/bin/python -m pytest -q tests/test_site.py`. Enable the existing local Chromium tests with `JOBPILOT_SITE_BROWSER_TESTS=1`. Tests cover architecture-specific download links, API failures, missing builds, language persistence, unavailable storage, configuration, screenshot decoding, root/subpath assets, keyboard tabs, modal focus, mobile navigation, FAQs, no-JavaScript fallback and narrow-screen overflow. They never download installation packages. The preview-server regression verifies isolated paths and denies write operations. Visual audit images remain in ignored local validation directories.

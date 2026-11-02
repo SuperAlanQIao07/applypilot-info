@@ -1,0 +1,77 @@
+{
+  "app_commit": "3aadfc6",
+  "app_version": "0.3.16",
+  "viewport": {
+    "width": 1440,
+    "height": 960
+  },
+  "source": "Actual app HTML/CSS/JS with a read-only isolated demo server",
+  "dataset": "Fictional Taylor Example profile, employers, statistics and messages; no real account or application data",
+  "controls": "No update workers, mail or application runs; all POST requests denied",
+  "images": [
+    {
+      "file": "zh-overview.webp",
+      "sha256": "ec5380756b04d520215a494170f7bc2451785dd86e39111106cc54ec3eebe010"
+    },
+    {
+      "file": "zh-targeted.webp",
+      "sha256": "36617b3105da2968a7b141cde4509f93ce8ce01301c849b5e16723a0c6063cc3"
+    },
+    {
+      "file": "zh-profile.webp",
+      "sha256": "76c1c53c93515113186058b6600648117f76af33b6b8c255e9073d01b975172b"
+    },
+    {
+      "file": "zh-apply.webp",
+      "sha256": "8187ff6ed37f9bcdecd5dbd935119b0a026c8dfbb476abaf0714cef8a707eda3"
+    },
+    {
+      "file": "zh-followup.webp",
+      "sha256": "3bd6770fbc8f2eeca645f3707d9830930486b75188b728fb109d5c147211e7ab"
+    },
+    {
+      "file": "zh-career.webp",
+      "sha256": "fbb5b735bee8950adde911aa9cb4f9cb0570181bd9a2953d2e188b322c506a06"
+    },
+    {
+      "file": "zh-reports.webp",
+      "sha256": "68dcd895936da1bafdf4f4710163409b1e8d880bdfe1a78bdb7a4bda44263ef4"
+    },
+    {
+      "file": "zh-updates.webp",
+      "sha256": "647aa050e8d672916cd39e690a605ec29af7b68a1f06d5af28e6542d0e48d46d"
+    },
+    {
+      "file": "en-overview.webp",
+      "sha256": "a397aea7579ae65d6d57080713865ff58607814801459b6d16e35e43cccd37af"
+    },
+    {
+      "file": "en-targeted.webp",
+      "sha256": "cc5bc84cb6358abe550852310b18431b786f2c04feacca17c407e196ba96e474"
+    },
+    {
+      "file": "en-profile.webp",
+      "sha256": "4cbb3a826a630fb11233a5c813db0fa322a6a90c4c67a6be52bbd6f9b9305bfd"
+    },
+    {
+      "file": "en-apply.webp",
+      "sha256": "778671adc9b70087018e0adfb23ec9f58d2df25f1570d4ce1d9baaf6713bfdbc"
+    },
+    {
+      "file": "en-followup.webp",
+      "sha256": "9f60bd1e70ce5a72d76c7e618adf9dc060b1503750cc3db3467df08ffb0a3f57"
+    },
+    {
+      "file": "en-career.webp",
+      "sha256": "50fe7d31bcbe3a48133c7de6c5ef6afcd6352958423513832b7040a3bc5facf7"
+    },
+    {
+      "file": "en-reports.webp",
+      "sha256": "172e00d51ad1ab4cf3abc32672a0dc0aee069ca569743c9dc871f5c0d2520323"
+    },
+    {
+      "file": "en-updates.webp",
+      "sha256": "7670b4e76f62a1e856af7fffb5a9e903062660791b4748a8d46633466c27634e"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 'use strict';
 (() => {
+  document.documentElement.classList.remove('no-js');
   const RELEASES = 'https://github.com/SuperAlanQIao07/applypilot-info/releases/latest';
   const API = 'https://api.github.com/repos/SuperAlanQIao07/applypilot-info/releases/latest';
   const copy = window.JOBPILOT_COPY;
@@ -72,11 +73,22 @@
   }
 
   function renderScreenshot() {
-    $('app-screenshot').src = `./screenshots/${language}-${shot}.webp`;
+    const source = `./screenshots/${language}-${shot}.webp`;
+    $('app-screenshot').src = source;
     $('app-screenshot').alt = t(`shot_${shot}_alt`);
     $('shot-caption').textContent = t(`caption_${shot}`);
+    $('hero-screenshot').src = `./screenshots/${language}-overview.webp`;
+    $('hero-screenshot').alt = t('shot_overview_alt');
+    $('screenshot-panel').setAttribute('aria-labelledby', `tab-${shot}`);
+    $('original-screenshot').href = source;
+    $('expanded-screenshot').src = source;
+    $('expanded-screenshot').alt = t(`shot_${shot}_alt`);
+    $('expanded-caption').textContent = t(`caption_${shot}`);
     document.querySelectorAll('[data-shot]').forEach((button) => {
-      button.setAttribute('aria-pressed', String(button.dataset.shot === shot));
+      const selected = button.dataset.shot === shot;
+      button.setAttribute('aria-pressed', String(selected));
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
     });
   }
 
@@ -108,6 +120,8 @@
     document.querySelectorAll('[data-language]').forEach((button) => {
       button.setAttribute('aria-pressed', String(button.dataset.language === language));
     });
+    $('menu-toggle').setAttribute('aria-label', t('nav_menu'));
+    $('expand-preview').setAttribute('aria-label', t('preview_expand'));
     renderRelease();
     renderScreenshot();
     renderConfig();
@@ -122,6 +136,48 @@
   document.querySelectorAll('[data-shot]').forEach((button) => {
     button.addEventListener('click', () => { shot = button.dataset.shot; renderScreenshot(); });
   });
+  const screenshotTabs = Array.from(document.querySelectorAll('[data-shot]'));
+  document.querySelector('.preview-tabs').addEventListener('keydown', (event) => {
+    if (!event.target.matches('[data-shot]') || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    const index = screenshotTabs.indexOf(event.target);
+    const next = event.key === 'Home' ? 0 : event.key === 'End' ? screenshotTabs.length - 1
+      : (index + (event.key === 'ArrowRight' ? 1 : -1) + screenshotTabs.length) % screenshotTabs.length;
+    screenshotTabs[next].click();
+    screenshotTabs[next].focus();
+    screenshotTabs[next].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  });
+  function closeMenu() {
+    $('site-navigation').classList.remove('open');
+    $('menu-toggle').setAttribute('aria-expanded', 'false');
+  }
+  $('menu-toggle').addEventListener('click', () => {
+    const open = $('site-navigation').classList.toggle('open');
+    $('menu-toggle').setAttribute('aria-expanded', String(open));
+  });
+  $('site-navigation').querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && $('site-navigation').classList.contains('open')) {
+      closeMenu(); $('menu-toggle').focus();
+    }
+  });
+  document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => {
+    const mode = button.dataset.mode;
+    for (const value of ['mass', 'targeted']) $('mode-' + value).hidden = value !== mode;
+    document.querySelectorAll('[data-mode]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  }));
+  document.querySelectorAll('[data-preview]').forEach(link => link.addEventListener('click', () => {
+    if (!screenshotTabs.some(button => button.dataset.shot === link.dataset.preview)) return;
+    shot = link.dataset.preview; renderScreenshot();
+  }));
+  $('expand-preview').addEventListener('click', () => $('preview-dialog').showModal());
+  $('close-preview').addEventListener('click', () => $('preview-dialog').close());
+  $('preview-dialog').addEventListener('click', event => {
+    if (event.target !== $('preview-dialog')) return;
+    const bounds = event.target.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) event.target.close();
+  });
+  $('preview-dialog').addEventListener('close', () => $('expand-preview').focus());
   renderLanguage();
 
   async function loadRelease() {
